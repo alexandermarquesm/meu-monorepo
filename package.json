@@ -1,0 +1,24 @@
+{
+  "name": "meu-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo com backend e frontend",
+  "scripts": {
+    "dev:backend": "cd packages/backend && pnpm run dev",
+    "dev:frontend": "cd packages/frontend && pnpm run dev",
+    "dev": "concurrently \"pnpm run dev:backend\" \"pnpm run dev:frontend\"",
+    "build:backend": "cd packages/backend && pnpm run build",
+    "build:frontend": "cd packages/frontend && pnpm run build",
+    "build": "pnpm run build:backend && pnpm run build:frontend",
+    "start": "cd packages/backend && pnpm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}

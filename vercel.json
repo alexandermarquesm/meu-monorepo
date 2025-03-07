@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/main.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "packages/react-app/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "api/main.js" },
+    { "src": "/(.*)", "dest": "packages/react-app/index.html" }
+  ]
+}
